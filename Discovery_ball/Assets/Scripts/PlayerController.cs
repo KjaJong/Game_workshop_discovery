@@ -11,7 +11,9 @@ public class PlayerController : MonoBehaviour {
     [SerializeField][Tooltip("The height the ball jumps.")]
     private float jumpHeight;
 	
-	// Update is called once per frame
+	/// <summary>
+    /// Physics update that controls the player movement.
+    /// </summary>
 	void FixedUpdate()
     {
 		if(playerBody == null) { return; }
