@@ -13,7 +13,7 @@ public class ForwardBackward : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         // scene onafhankelijk
-        // starting_Z_Point = transform.position.z;
+        starting_Z_Point = transform.position.z;
 		
 
     }
@@ -31,7 +31,7 @@ public class ForwardBackward : MonoBehaviour {
         if (movesForward)
         {
             transform.Translate(Vector3.forward * Time.deltaTime);
-            if(transform.position.z >= 8)
+            if(transform.position.z >= starting_Z_Point + 6.0) // max 4"stappen vooruit"
             {
                 movesForward = !movesForward;
             }
@@ -40,7 +40,7 @@ public class ForwardBackward : MonoBehaviour {
         else if (!movesForward)
         {
             transform.Translate(Vector3.back * Time.deltaTime);
-            if (transform.position.z <= 2)
+            if (transform.position.z <= starting_Z_Point)
             {
                 movesForward = !movesForward;
             }
